@@ -14,13 +14,7 @@ A Rust-based tool for monitoring Docker container resource usage via cgroupv2, s
 
 ```bash
 # Monitor specific container
-cargo run -- --container nginx --interval 2
-
-# Use configuration file
-cargo run -- --config config.toml
-
-# Monitor with custom interval
-cargo run -- --container redis --interval 5
+cargo run -- --container 76217c0cf5211e7414ebdf9fc078b7997612158174744ebf42798c484cc58ac8 --interval 2
 ```
 
 ## Configuration
@@ -28,9 +22,8 @@ cargo run -- --container redis --interval 5
 Create a `config.toml` file:
 
 ```toml
-containers = ["nginx", "redis", "postgres"]
+containers = ["<docker_container_id>"]
 interval_seconds = 1
-output_format = "table"
 ```
 
 ## Requirements
